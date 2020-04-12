@@ -39,9 +39,9 @@ function App() {
   );
 }
 
-//This class is what creates and updates our routes orios
+//This class is what creates and updates our routes 
 class Childs extends React.Component {
-  state = {//We need to declare what our state contains and initalize it to a none null answer or else react will crash
+  state = {//We need to declare what our state contains and initalize it to a non-null answer or else react will crash
     item: 'asdasdsd'
   }
   //Once the component has mounted we hand it the prop
@@ -51,7 +51,7 @@ class Childs extends React.Component {
   componentDidMount () {
     const { item } = this.props.location.state
     //Now, right here I opted to just use the object we already handed in
-    //but in this componentDidMount block you are free
+    //through the state parameter but in this componentDidMount block you are free
     //to try and make another axios call using the ID from earlier (that you see in the path)
     //to maybe run a GET on a user profile and then using set state to change what is displayed 
     this.setState(() => ({ item }))
