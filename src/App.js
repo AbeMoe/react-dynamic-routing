@@ -41,16 +41,24 @@ function App() {
 
 //This class is what creates and updates our routes orios
 class Childs extends React.Component {
-  state = {
+  state = {//We need to declare what our state contains and initalize it to a none null answer or else react will crash
     item: 'asdasdsd'
   }
+  //Once the component has mounted we hand it the prop
+  //we generated in the Link component earlier.
+  //That "state" part of the object we gave "LinK"
+  //is stored in this.props.location.state.
   componentDidMount () {
     const { item } = this.props.location.state
+    //Now, right here I opted to just use the object we already handed in
+    //but in this componentDidMount block you are free
+    //to try and make another axios call using the ID from earlier (that you see in the path)
+    //to maybe run a GET on a user profile and then using set state to change what is displayed 
     this.setState(() => ({ item }))
   }
   render() {
 
-
+    //just a plain simple render function
     return(<h1>{this.props.location.state.item.title}</h1>)
   }
 }
